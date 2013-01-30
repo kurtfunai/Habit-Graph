@@ -1,0 +1,14 @@
+<ul>
+  <li ng-repeat="habit in habits">
+    <a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a>
+  </li>
+  <li><a ng-href="#/habits">All</a></li>
+</ul>
+<h1>{{habit.name}}</h1>
+<p>{{habit.frequencyTypeName}}</p>
+<p>Completion: {{habit.completionPercentage}}%</p>
+<p>Longest Streak: {{habit.longestStreak}}</p>
+
+<ul>
+  <li ng-repeat="date in habit.completed">{{date}}</li>
+</ul>

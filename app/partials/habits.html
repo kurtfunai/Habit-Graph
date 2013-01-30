@@ -1,0 +1,7 @@
+<p>Click to view more details about each habit:</p>
+<ul>
+  <li ng-repeat="habit in habits">
+    <a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a>
+  </li>
+  <li><a ng-href="#/habits">All</a></li>
+</ul>
