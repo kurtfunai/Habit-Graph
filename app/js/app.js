@@ -5,6 +5,6 @@
 angular.module('habitGraph', ['habitGraph.filters', 'habitGraph.services', 'habitGraph.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/habits', {templateUrl: 'partials/habits.html', controller: HabitListCtrl});
-    $routeProvider.when('/habits/:habitId', {templateUrl: 'partials/habit-details.html', controller: HabitDetailCtrl});
+    $routeProvider.when('/habits/:habitId', {templateUrl: 'partials/habits.html', controller: HabitDetailCtrl});
     $routeProvider.otherwise({redirectTo: '/habits'});
   }]);

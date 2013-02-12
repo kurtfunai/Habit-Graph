@@ -1,20 +1,35 @@
 <h1>Habit Graph</h1>
-<table>
-  <thead>
-    <th ng-click="sort('name')">Habit^</th>
-    <th ng-click="sort('completionPercentage')">Completion %^</th>
-    <th>Frequency</th>
-    <th>Times Completed</th>
-    <th ng-click="sort('createdAt')">Started^</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="habit in habits | orderBy:predicate">
-      <td><a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a></td>
-      <td>{{habit.completionPercentage}}</td>
-      <td>{{habit.frequencyTypeName}}</td>
-      <td>{{habit.completed.length}}</td>
-      <td>{{habit.createdAt}}</td>
-    </tr>
-    <tr><td colspan="5"><a ng-href="#/habits">All</a></td></tr>
-  </tbody>
-</table>
+
+<div ng-controller="HabitListCtrl">
+  <input type="text" ng-model="search"/>
+  <table>
+    <thead>
+      <th ng-click="sort('name')">Habit^</th>
+      <th ng-click="sort('completionPercentage')">Completion %^</th>
+      <th>Frequency</th>
+      <th>Times Completed</th>
+      <th ng-click="sort('createdAt')">Started^</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="habit in habits | orderBy:predicate | filter:search">
+        <td><a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a></td>
+        <td>{{habit.completionPercentage}}</td>
+        <td>{{habit.frequencyTypeName}}</td>
+        <td>{{habit.completed.length}}</td>
+        <td>{{habit.createdAt}}</td>
+      </tr>
+      <tr><td colspan="5"><a ng-href="#/habits">All</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div ng-controller="HabitDetailCtrl">
+    <h1>{{habit.name}}</h1>
+    <p>{{habit.frequencyTypeName}}</p>
+    <p>Completion: {{habit.completionPercentage}}%</p>
+    <p>Longest Streak: {{habit.longestStreak}}</p>
+
+    <ul>
+      <li ng-repeat="date in habit.completed">{{date}}</li>
+    </ul>
+</div>
