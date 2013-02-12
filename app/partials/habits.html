@@ -1,7 +1,20 @@
-<p>Click to view more details about each habit:</p>
-<ul>
-  <li ng-repeat="habit in habits">
-    <a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a>
-  </li>
-  <li><a ng-href="#/habits">All</a></li>
-</ul>
+<h1>Habit Graph</h1>
+<table>
+  <thead>
+    <th ng-click="sort('name')">Habit^</th>
+    <th ng-click="sort('completionPercentage')">Completion %^</th>
+    <th>Frequency</th>
+    <th>Times Completed</th>
+    <th ng-click="sort('createdAt')">Started^</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="habit in habits | orderBy:predicate">
+      <td><a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a></td>
+      <td>{{habit.completionPercentage}}</td>
+      <td>{{habit.frequencyTypeName}}</td>
+      <td>{{habit.completed.length}}</td>
+      <td>{{habit.createdAt}}</td>
+    </tr>
+    <tr><td colspan="5"><a ng-href="#/habits">All</a></td></tr>
+  </tbody>
+</table>

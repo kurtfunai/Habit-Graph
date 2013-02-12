@@ -15,7 +15,7 @@ How to use:
 -----------
 * Export your Habit List data via the iOS app by going to Settings->Export Data
 * Save the JSON data to a file called habits.json, in the app/habits directory
-* Run the ruby script habits.rb `ruby habits.rb`
+* Run the ruby script habits.rb from the project root `ruby scripts/habits.rb`
 
 * Install node.js and run `scripts/web-server.js`
 * Navigate to [http://localhost:8000/app/index.html](http://localhost:8000/app/index.html)

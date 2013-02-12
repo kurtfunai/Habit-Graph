@@ -5,6 +5,11 @@
 
 function HabitListCtrl($scope, Habit) {
   $scope.habits = Habit.query();
+  $scope.predicate = 'name';
+
+  $scope.sort = function(col) {
+    $scope.predicate = $scope.predicate == col ? '-' + col : col;
+  };
 }
 //HabitListCtrl.$inject = [$scope, Habit];
 

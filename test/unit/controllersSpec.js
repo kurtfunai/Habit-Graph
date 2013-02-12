@@ -31,6 +31,10 @@ describe('HabitListCtrl', function(){
     expect(scope.habits).toEqualData(
         [{name: 'Habit 1'}, {name: 'Habit 2'}]);
   });
+
+  it('should be ordered by name', function() {
+    expect(scope.predicate).toEqual('name');
+  });
 });
 
 
