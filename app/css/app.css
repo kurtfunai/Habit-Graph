@@ -1,30 +1,41 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+* {
+  margin:0;
+  padding:0;
+}
+body {
+  font-family: "Open Sans", Helvetica, Arial;
+}
+h1 {
+  font-size:56px;
+}
+.container{
+  width: 980px;
+  margin: 0 auto;
 }
 
-.menu:before {
-  content: "[";
+#page-title {
+  padding: 0 0 12px 0;
+}
+#page-title h1 {
+  display:inline-block;
+  margin: 0 25px 0 0;
+}
+#page-title input{
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size:24px;
+  padding: 4px;
 }
 
-.menu:after {
-  content: "]";
+#habits {
+  background-color: #F0F0D8;
+  padding: 20px 0;
 }
 
-.menu > li {
-  display: inline;
+#habit-details {
+  background-color: #D8D8A8;
 }
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+th {
+  padding-bottom: 8px;
 }

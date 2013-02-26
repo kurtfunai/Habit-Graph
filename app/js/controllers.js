@@ -15,11 +15,8 @@ function HabitListCtrl($scope, Habit) {
 
 
 function HabitDetailCtrl($scope, $routeParams, Habit) {
-  $scope.habits = Habit.query();
-
   if ($routeParams.habitId) {
     $scope.habit = Habit.get({habitId: $routeParams.habitId}, function(habit) {
-      // Default Habit?
     });
   }
 }
