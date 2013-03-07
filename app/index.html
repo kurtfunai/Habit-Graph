@@ -1,11 +1,41 @@
 <!doctype html>
-<html lang="en" ng-app="habitGraph">
+<html lang="en" ng-app="habitGraph" ng-controller="HabitListCtrl">
 <head>
   <meta charset="utf-8">
   <title>Habit Graph</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
+
+  <section id="page-title">
+  <div class="container">
+    <h1>Habit Graph</h1><input type="text" placeholder="Search habits" ng-model="search"/>
+  </div>
+</section>
+
+<section id="habits">
+  <div class="container">
+    <table>
+      <thead>
+        <th ng-click="sort('name')">Habit^</th>
+        <th ng-click="sort('completionPercentage')">Completion %^</th>
+        <th>Frequency</th>
+        <th>Times Completed</th>
+        <th ng-click="sort('createdAt')">Started^</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="habit in habits | orderBy:predicate | filter:search">
+          <td><a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a></td>
+          <td>{{habit.completionPercentage}}</td>
+          <td>{{habit.frequencyTypeName}}</td>
+          <td>{{habit.completed.length}}</td>
+          <td>{{habit.createdAt}}</td>
+        </tr>
+        <tr><td colspan="5"><a ng-href="#/habits">All</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
   <div ng-view></div>
 

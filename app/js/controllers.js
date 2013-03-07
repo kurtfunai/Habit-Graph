@@ -4,8 +4,9 @@
 
 
 function HabitListCtrl($scope, Habit) {
-  $scope.habits = Habit.query();
-  $scope.predicate = 'name';
+  $scope.habits = Habit.sources.query();
+  $scope.predicate = 'name'; // Sort habits by name
+  Habit.format([1,2]);
 
   $scope.sort = function(col) {
     $scope.predicate = $scope.predicate == col ? '-' + col : col;
@@ -13,10 +14,15 @@ function HabitListCtrl($scope, Habit) {
 }
 //HabitListCtrl.$inject = [$scope, Habit];
 
-
+function HabitNoDetailCtrl($scope, Habit) {
+    $scope.habits = Habit;
+}
+// HabitNoDetailCtrl.$inject = [$scope, Habit];
+ 
 function HabitDetailCtrl($scope, $routeParams, Habit) {
   if ($routeParams.habitId) {
-    $scope.habit = Habit.get({habitId: $routeParams.habitId}, function(habit) {
+    $scope.habit = Habit.sources.get({habitId: $routeParams.habitId}, function(habit) {
+      // Format habit
     });
   }
 }

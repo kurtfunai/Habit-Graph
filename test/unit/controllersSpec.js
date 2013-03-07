@@ -49,21 +49,12 @@ describe('HabitDetailCtrl', function(){
   beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
     $httpBackend = _$httpBackend_;
     
-    $httpBackend.expectGET('habits/habits.json').respond([{name: 'Habit 1'}, {name: 'Habit 2'}]);
     $httpBackend.expectGET('habits/xyz.json').respond(xyzHabit());
 
     $routeParams.habitId = 'xyz';
     scope = $rootScope.$new();
     ctrl = $controller(HabitDetailCtrl, {$scope: scope});
   }));
-
-  it('should create "habits" model with 2 habits fetched from xhr', function() {
-    expect(scope.habits).toEqual([]);
-    $httpBackend.flush();
-
-    expect(scope.habits).toEqualData(
-        [{name: 'Habit 1'}, {name: 'Habit 2'}]);
-  });
 
   it('should fetch habit details', function() {
     expect(scope.habit).toEqualData({});
