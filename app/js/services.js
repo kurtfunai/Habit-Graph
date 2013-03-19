@@ -12,6 +12,21 @@ habitGraph.factory('Habit', function($resource){
       }),
       format: function(habits){
         console.log(habits);
+      },
+      getProductiveDays: function(dates){
+        var days = {
+          Monday: 0,
+          Tuesday: 0,
+          Wednesday: 0,
+          Thursday: 0,
+          Friday: 0,
+          Saturday: 0,
+          Sunday: 0
+        };
+        dates.forEach(function(date){
+          days[moment(date.substr(0,10), 'YYYY-MM-DD').format('dddd')]++;
+        });
+        return days;
       }
     }      
   });
