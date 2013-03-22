@@ -21,7 +21,7 @@ function HabitNoDetailCtrl($scope, Habit) {
  
 function HabitDetailCtrl($scope, $routeParams, Habit) {
   $scope.habit = Habit.sources.get({habitId: $routeParams.habitId}, function(habit) {
-    Habit.getProductiveDays($scope.habit.completed);
+    $scope.habit.productiveDays = Habit.getProductiveDays($scope.habit.completed);
   });
 }
 // HabitDetailCtrl.$inject = [$scope, $routeParams, Habit];
