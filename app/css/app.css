@@ -1,4 +1,4 @@
-/* app css stylesheet */
+/* Generic Styles */
 * {
   margin:0;
   padding:0;
@@ -13,7 +13,11 @@ h1 {
   width: 980px;
   margin: 0 auto;
 }
+.clear {
+  clear:both;
+}
 
+/* Index */
 #page-title {
   padding: 0 0 12px 0;
 }
@@ -32,10 +36,40 @@ h1 {
   background-color: #F0F0D8;
   padding: 20px 0;
 }
+#habits li {
+  padding: 6px;
+  margin: 0 4px;
+  float:left;
+  list-style-type: none;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#habits li a{
+  text-decoration: none;
+}
+#habits li:hover a{
+  text-decoration: underline;
+}
 
+/* Details */
 #habit-details {
   background-color: #D8D8A8;
 }
 th {
   padding-bottom: 8px;
+}
+
+#productive-days svg{
+  margin: 0 auto;
+  height: 300px;
+  width: 670px;
+  min-width: 100px;
+  min-height: 100px;
+/*
+  margin: 10px;
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
 }

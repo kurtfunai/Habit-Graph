@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Habit Graph</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link href="lib/nvd3/src/nv.d3.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -14,27 +15,12 @@
 </section>
 
 <section id="habits">
-  <div class="container">
-    <table>
-      <thead>
-        <th ng-click="sort('name')">Habit^</th>
-        <th ng-click="sort('completionPercentage')">Completion %^</th>
-        <th>Frequency</th>
-        <th>Times Completed</th>
-        <th ng-click="sort('createdAt')">Started^</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="habit in habits | orderBy:predicate | filter:search">
-          <td><a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a></td>
-          <td>{{habit.completionPercentage}}</td>
-          <td>{{habit.frequencyTypeName}}</td>
-          <td>{{habit.completed.length}}</td>
-          <td>{{habit.createdAt}}</td>
-        </tr>
-        <tr><td colspan="5"><a ng-href="#/habits">All</a></td></tr>
-      </tbody>
-    </table>
-  </div>
+  <ul class="container">
+    <li class="habit" ng-repeat="habit in habits | orderBy:predicate | filter:search">
+      <a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a>
+    </li>
+  </ul>
+  <div class="clear"></div>
 </section>
 
   <div ng-view></div>
@@ -50,5 +36,14 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="lib/moment.min.js"></script>
+
+  <script src="lib/nvd3/lib/d3.v2.js"></script>
+  <script src="lib/nvd3/nv.d3.js"></script>
+  <!-- including all the components so I don't have to minify every time I test in development -->
+  <script src="lib/nvd3/src/tooltip.js"></script>
+  <script src="lib/nvd3/src/utils.js"></script>
+  <script src="lib/nvd3/src/models/axis.js"></script>
+  <script src="lib/nvd3/src/models/discreteBar.js"></script>
+  <script src="lib/nvd3/src/models/discreteBarChart.js"></script>
 </body>
 </html>

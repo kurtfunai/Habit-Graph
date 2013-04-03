@@ -5,7 +5,7 @@
 
 function HabitListCtrl($scope, Habit) {
   $scope.habits = Habit.sources.query();
-  $scope.predicate = 'name'; // Sort habits by name
+  $scope.predicate = 'name'; // Sort habits by name or [createdAt, completionPercentage]
 
   $scope.sort = function(col) {
     $scope.predicate = $scope.predicate == col ? '-' + col : col;
@@ -21,7 +21,8 @@ function HabitNoDetailCtrl($scope, Habit) {
  
 function HabitDetailCtrl($scope, $routeParams, Habit) {
   $scope.habit = Habit.sources.get({habitId: $routeParams.habitId}, function(habit) {
-    $scope.habit.productiveDays = Habit.getProductiveDays($scope.habit.completed);
+    var productiveDays = Habit.getProductiveDays($scope.habit.completed);  
+    $scope.habit.drawProductiveDaysChart(productiveDays);
   });
 }
 // HabitDetailCtrl.$inject = [$scope, $routeParams, Habit];
