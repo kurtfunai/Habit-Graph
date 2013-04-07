@@ -19,6 +19,7 @@
     <li class="habit" ng-repeat="habit in habits | orderBy:predicate | filter:search">
       <a ng-href="#/habits/{{habit.name | urlencode}}">{{habit.name}}</a>
     </li>
+    <li class="habit"><a ng-href="#/habits">All</a></li>
   </ul>
   <div class="clear"></div>
 </section>
@@ -37,13 +38,17 @@
   <script src="js/directives.js"></script>
   <script src="lib/moment.min.js"></script>
 
-  <script src="lib/nvd3/lib/d3.v2.js"></script>
-  <script src="lib/nvd3/nv.d3.js"></script>
+  <script src="lib/nvd3/lib/d3.v2.min.js"></script>
+  <script src="lib/nvd3/nv.d3.min.js"></script>
   <!-- including all the components so I don't have to minify every time I test in development -->
   <script src="lib/nvd3/src/tooltip.js"></script>
   <script src="lib/nvd3/src/utils.js"></script>
   <script src="lib/nvd3/src/models/axis.js"></script>
   <script src="lib/nvd3/src/models/discreteBar.js"></script>
   <script src="lib/nvd3/src/models/discreteBarChart.js"></script>
+  <!--<script src="lib/nvd3/src/models/legend.js"></script>
+  <script src="lib/nvd3/src/models/pie.js"></script>
+  <script src="lib/nvd3/src/models/pieChart.js"></script>
+  <script src="lib/nvd3/src/utils.js"></script>-->
 </body>
 </html>

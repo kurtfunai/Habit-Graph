@@ -60,8 +60,16 @@ th {
   padding-bottom: 8px;
 }
 
+#productive-days {
+  display: block;
+  /*width: 670px;*/
+  margin: 15px auto;
+}
+#productive-days h3{
+  display: block;
+  margin: 0 32px;
+}
 #productive-days svg{
-  margin: 0 auto;
   height: 300px;
   width: 670px;
   min-width: 100px;
