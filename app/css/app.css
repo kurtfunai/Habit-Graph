@@ -59,8 +59,21 @@ h1 small {
 #habit-details {
   background-color: #D8D8A8;
 }
+#habit-details table {
+  background-color: #F0F0D8;
+  display:block;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 4px;
+}
 th {
+  min-width: 150px;
+  text-align: center;
   padding-bottom: 8px;
+}
+td {
+  text-align: center;
 }
 
 #productive-days {
