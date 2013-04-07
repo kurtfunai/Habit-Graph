@@ -9,6 +9,9 @@ body {
 h1 {
   font-size:56px;
 }
+h1 small {
+  font-size: 65%;
+}
 .container{
   width: 980px;
   margin: 0 auto;
