@@ -21,12 +21,15 @@
       </tbody>
     </table>
 
-    <div id="productive-days">
+    <div id="productive-days" class="bar-chart">
       <h3>Productive Days</h3>
       <svg></svg>
     </div>
 
-    <p>{{habit.productiveDays}}</p>
+    <div id="productive-months" class="bar-chart">
+      <h3>Productivity by Month <small>(in last year)</small></h3>
+      <svg></svg>
+    </div>
 
     <ul>
       <li ng-repeat="date in habit.completed">{{date}}</li>

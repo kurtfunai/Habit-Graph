@@ -49,6 +49,24 @@ habitGraph.factory('Habit', function($resource){
       this.drawBarChart(productiveDaysData, '#productive-days');
     },
 
+    drawProductiveMonthsChart: function(months){
+      var productiveMonthsData = [ 
+        {
+          key: "Cumulative Return",
+          values: []
+        }
+      ];
+      // Add the key and values for each month to the chart data
+      for(var index in months) { 
+        productiveMonthsData[0]["values"].push({
+          "label" : index ,
+          "value" : months[index]
+        })
+      }
+      
+      this.drawBarChart(productiveMonthsData, '#productive-months');
+    },
+
     drawBarChart: function(data, divId) {
       nv.addGraph(function() {  
         var chart = nv.models.discreteBarChart()

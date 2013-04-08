@@ -84,24 +84,26 @@ td {
   text-align: center;
 }
 
-#productive-days {
+/* Charts */
+.bar-chart {
   display: block;
   /*width: 670px;*/
   margin: 35px auto;
 }
-#productive-days h3{
+.bar-chart h3{
   display: block;
   margin: 0 32px;
 }
-#productive-days svg{
+.bar-chart svg {
   height: 300px;
   width: 670px;
   min-width: 100px;
   min-height: 100px;
-/*
-  margin: 10px;
-  Minimum height and width is a good idea to prevent negative SVG dimensions...
-  For example width should be =< margin.left + margin.right + 1,
-  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
-*/
 }
+#productive-days svg{
+  
+}
+#productive-months svg{
+
+}
+
