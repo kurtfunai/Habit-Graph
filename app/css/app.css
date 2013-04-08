@@ -7,10 +7,16 @@ body {
   font-family: "Open Sans", Helvetica, Arial;
 }
 h1 {
-  font-size:56px;
+  font-size:50px;
 }
 h1 small {
   font-size: 65%;
+}
+h2 {
+ font-size:40px; 
+}
+h3 {
+  font-size:24px;
 }
 .container{
   width: 980px;
@@ -27,11 +33,12 @@ h1 small {
 #page-title h1 {
   display:inline-block;
   margin: 0 25px 0 0;
+  color:#383838;
 }
 #page-title input{
   border-radius: 4px;
   border: 1px solid #ccc;
-  font-size:24px;
+  font-size:20px;
   padding: 4px;
 }
 
@@ -40,15 +47,15 @@ h1 small {
   padding: 20px 0;
 }
 #habits li {
-  padding: 6px;
   margin: 0 4px;
   float:left;
   list-style-type: none;
-  background-color: #fcfcfc;
-  border-radius: 4px;
   cursor: pointer;
 }
 #habits li a{
+  padding: 6px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
   text-decoration: none;
 }
 #habits li:hover a{
@@ -57,10 +64,11 @@ h1 small {
 
 /* Details */
 #habit-details {
-  background-color: #e0e1d1;
+  background-color: #e0e0e0;
+  padding-top: 15px;
 }
 #habit-details table {
-  background-color: #F0F0D8;
+  background-color: #f4f4f4;
   display:block;
   margin: 20px 0;
   padding: 10px;
@@ -79,7 +87,7 @@ td {
 #productive-days {
   display: block;
   /*width: 670px;*/
-  margin: 15px auto;
+  margin: 35px auto;
 }
 #productive-days h3{
   display: block;
