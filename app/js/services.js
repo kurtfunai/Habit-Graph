@@ -12,7 +12,7 @@ habitGraph.factory('Habit', function($resource){
     }),
 
     format: function(habits){
-      console.log(habits);
+      
     },
 
     getProductiveDays: function(dates){
@@ -68,6 +68,7 @@ habitGraph.factory('Habit', function($resource){
     },
 
     drawBarChart: function(data, divId) {
+      nv.dev = false; // Disables logging
       nv.addGraph(function() {  
         var chart = nv.models.discreteBarChart()
           .x(function(d) { return d.label })
@@ -88,6 +89,10 @@ habitGraph.factory('Habit', function($resource){
       });
     }
   }      
+});
+
+habitGraph.factory('Moment', function(){
+  return moment;
 });
 
 // var injector = angular.injector(['habitGraph.services', 'ng']);

@@ -3,6 +3,8 @@
 require 'json'
 require 'date'
 
+# 
+
 if !File.exists? 'app/habits/habits.json'
   throw 'Please place your habits JSON data into a file called habits.json in the app/habits/ directory'
 end
@@ -49,7 +51,7 @@ habits.each do |habit|
   end
 
   # Save habit details in a json file
-  File.open 'app/habits/#{habit["name"].downcase}.json', 'w' do |f|
+  File.open "app/habits/#{habit['name'].downcase}.json", 'w' do |f|
     f.write JSON.pretty_generate(habit)
   end
 end
